@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-
+jsptaglibrary_2_0.xsd" version="2.0">
+
+<tlib-version>1.0</tlib-version>
+<uri>fluantoc</uri>
+<!--Declaracion de Tag -->
+<tag>
+	<!--Cabecera Inicio -->
+	<name>advice</name><!--nombre del tag-->
+	<tag-class>com.tag.AdvisorTagHandler</tag-class><!--clase del tag-->
+	<body-content>empty</body-content>
+	<!--Cabecera Fin -->
+
+	<!--Atributos Inicio -->
+	<attribute>
+		<name>user</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<!--Atributos Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>tableList</name><!--nombre del tag-->
+	<tag-class>com.tag.TableListTag</tag-class><!--clase del tag-->
+	<body-content>empty</body-content>
+	<!--Cabecera Fin -->
+
+	<!--Atributos Inicio -->
+	<attribute>
+		<name>lista</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<!--Atributos Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>sbody</name><!--nombre del tag-->
+	<tag-class>com.tag.SimpleBodyTagHandler</tag-class><!--clase del tag-->
+	<body-content>scriptless</body-content>
+	<!--Cabecera Fin -->
+
+	<!--Atributos Inicio -->
+	<attribute>
+		<name>user</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<!--Atributos Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>sbodyIter</name><!--nombre del tag-->
+	<tag-class>com.tag.SimpleBodyIterTagHandler</tag-class><!--clase del tag-->
+	<body-content>scriptless</body-content>
+	<!--Cabecera Fin -->
+</tag>
+
+<!-- Tags Classic -->
+<tag>
+	<!--Cabecera Inicio -->
+	<name>sclasic</name><!--nombre del tag-->
+	<tag-class>com.tag.ClassicTagHandler</tag-class><!--clase del tag-->
+	<body-content>empty</body-content>
+	<!--Cabecera Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>sclasicb</name><!--nombre del tag-->
+	<tag-class>com.tag.ClassicBodyTagHandler</tag-class><!--clase del tag-->
+	<body-content>scriptless</body-content>
+	<!--Cabecera Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>sclasicbIter</name><!--nombre del tag-->
+	<tag-class>com.tag.ClassicBodyIterTagHandler</tag-class><!--clase del tag-->
+	<body-content>scriptless</body-content>
+	<!--Cabecera Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>cParent</name><!--nombre del tag-->
+	<tag-class>com.tag.ClassicParent</tag-class><!--clase del tag-->
+	<body-content>scriptless</body-content>
+	<!--Cabecera Fin -->
+	
+	<!--Atributos Inicio -->
+	<attribute>
+		<name>color</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<!--Atributos Fin -->
+</tag>
+
+<tag>
+	<!--Cabecera Inicio -->
+	<name>cInner</name><!--nombre del tag-->
+	<tag-class>com.tag.ClassicInner</tag-class><!--clase del tag-->
+	<body-content>empty</body-content>
+	<!--Cabecera Fin -->
+</tag>
+
+</taglib>

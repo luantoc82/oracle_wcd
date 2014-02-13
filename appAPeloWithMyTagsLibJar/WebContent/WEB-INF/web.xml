@@ -1,0 +1,90 @@
+
+<web-app>
+   <display-name>App a pELO</display-name>
+   
+	<servlet>
+		<servlet-name>ServletSaludo</servlet-name>
+		<servlet-class>com.pe.SSaludo</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ServletSaludo</servlet-name>
+		<url-pattern>/SSaludo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ServletParam</servlet-name>
+		<servlet-class>com.pe.SSaludoWithParams2</servlet-class>
+		<!-- Cargamos el servlet al deployar la aplicacion-->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ServletParam</servlet-name>
+		<url-pattern>/S2</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configuracion de la Sesion-->
+	<session-config>
+		<session-timeout>10</session-timeout>	
+	</session-config>
+	
+	<context-param>
+	<param-name>mainEmail</param-name>
+	<param-value>likewecare@wickedlysmart.com</param-value>
+	</context-param>
+	
+	<welcome-file-list>
+		<welcome-file>luis.jsp</welcome-file>
+		<welcome-file>inicio.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--Seguridad -->
+	<!--Habilito la autenticacion-->
+	<login-config>
+		<!--1.-<auth-method>BASIC</auth-method>-->
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/error.jsp</form-error-page>
+		</form-login-config>html
+		
+	</login-config>
+	
+	<!-- mapeando roles-->
+	<security-role>
+		<role-name>Member</role-name>
+		<role-name>Admin</role-name>
+		<role-name>Guest</role-name>
+	</security-role>
+	
+	<!-- Autorizacion-->
+	<security-constraint>
+	
+		<web-resource-collection>
+			<web-resource-name>UpdateRecipes</web-resource-name>
+			<url-pattern>/lpdtm/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<!-- Si no la uso deberia dar permiso a todos, pero
+			no funciona y no aprece la pag de login-->
+		<!--<auth-constraint>-->
+			<!--<role-name>Admin</role-name>-->
+			
+		<!--</auth-constraint>-->
+		-->
+		<!--<auth-constraint/>-->
+		<auth-constraint>
+			<!-- Solo a rol admin-->
+			<role-name>Admin</role-name>
+			
+		</auth-constraint>
+	</security-constraint>
+	
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/notFound.jsp</location>
+	</error-page>
+</web-app>
