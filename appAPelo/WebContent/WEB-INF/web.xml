@@ -5,6 +5,10 @@
 	<servlet>
 		<servlet-name>ServletSaludo</servlet-name>
 		<servlet-class>com.pe.SSaludo</servlet-class>
+		<init-param>
+			<param-name>nick</param-name>
+			<param-value>luantoc</param-value>
+		</init-param>
 	</servlet>
 	
 	<servlet-mapping>
@@ -24,6 +28,16 @@
 		<url-pattern>/S2</url-pattern>
 	</servlet-mapping>
 	
+	<!--Configurando servlet con recurso JSP-->
+	<servlet>
+		<servlet-name>slogin</servlet-name>
+		<jsp-file>/login.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>slogin</servlet-name>
+		<url-pattern>/pruebas/*</url-pattern>
+	</servlet-mapping>
 	<!-- Configuracion de la Sesion-->
 	<session-config>
 		<session-timeout>10</session-timeout>	
